@@ -19,7 +19,8 @@ export async function getExercise(addrinfo) {
     await page.type('#username', process.env.WAFFEL_USERNAME);
     await click(page, "#submit")
 
-    // do stuff
+    // load exercise
+    // TODO: Check if this gets the correct exercise if there are multiple present
     await click(page, "#profile")
     let exercise = await page.evaluate(() => {
         let t = document.querySelector("main").children[2].children[1].children[0].children[1]
@@ -29,8 +30,6 @@ export async function getExercise(addrinfo) {
             result: t.children[3].innerText
         }
     })
-
-    console.log(exercise)
 
     // logout
     await click(page, "#logout")
