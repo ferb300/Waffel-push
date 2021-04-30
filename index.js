@@ -42,10 +42,19 @@ var msg = {
 };
 
 let job = new CronJob("* * * * *", async function() {
-    let exercise = await getExercise(addrinfo)
+    let exercise
+    try {
+        exercise = await getExercise(addrinfo)
+        console.log("Got the current exercise")
+    } catch {
+        console.log("Had trouble getting the current exercise...")
+    }
+    
     if (exercise.name != currName) {
+        console.log("New feedback recognized")
         currName = exercise.name
         msg.m = encodeURIComponent(`${exercise.result} ist dein Ergebnis für "${exercise.name}" im Kurs "${exercise.course}"`)
+        console.log("Sending push notification")
         push.send( msg, function( err, result ) {
             if (err) { console.log( 'ERROR:', err ); }
             console.log( 'RESULT', result );
