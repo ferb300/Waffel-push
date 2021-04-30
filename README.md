@@ -6,4 +6,4 @@ Push notification service for WAFFEL-exercises
 2. Create a pushsafer account
 3. Clone repository to your machine
 4. Rename .env.example to .env and enter your value
-5. Run ´´´docker-compose build && docker-compose up´´´
+5. Run `docker-compose build && docker-compose up`
