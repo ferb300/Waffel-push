@@ -14,13 +14,14 @@ export async function getExercise(addrinfo) {
     await page.goto(process.env.WAFFEL_BASE_URL + '/login');
 
     // login
-    console.log(await page.title())
+    console.log("Logging in")
     await page.type('#password', process.env.WAFFEL_PASSWORD);
     await page.type('#username', process.env.WAFFEL_USERNAME);
     await click(page, "#submit")
 
     // load exercise
     // TODO: Check if this gets the correct exercise if there are multiple present
+    console.log("Getting exercise")
     await click(page, "#profile")
     let exercise = await page.evaluate(() => {
         let t = document.querySelector("main").children[2].children[1].children[0].children[1]
@@ -32,6 +33,7 @@ export async function getExercise(addrinfo) {
     })
 
     // logout
+    console.log("Logging out")
     await click(page, "#logout")
     await page.close();
     await browser.disconnect();
