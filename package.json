@@ -9,7 +9,7 @@
     "start": "node index.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "dependencies": {
     "cron": "^1.8.2",
     "puppeteer-core": "^9.0.0",
