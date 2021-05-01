@@ -1,5 +1,4 @@
 import puppeteer from "puppeteer-core";
-import crypto from "crypto"
 
 async function click(page, identifier) {
     return Promise.all([
