@@ -8,7 +8,9 @@ The website WAFFEL provides overview, submission management and feedback for uni
 
 ## Setup
 1. Install docker and docker-compose
-2. Create a pushsafer account
+2. Create a [pushsafer.com](https://www.pushsafer.com/) account
 3. Clone repository to your machine
-4. Rename `.env.example` to `.env` and enter your values
-5. Run `docker-compose build && docker-compose up`
+4. Rename `.env.example` to `.env` and enter your values:
+    - Pushsafer private key
+    - WAFFEL-Credentials
+6. Run `docker-compose build && docker-compose up`
